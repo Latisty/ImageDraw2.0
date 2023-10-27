@@ -531,7 +531,7 @@ int main()
     247,
     249,
     249,
-    259,
+    249,
     252,
     252,
     252,
@@ -803,7 +803,7 @@ int main()
     std::cout << value_Corrections.size() << std::endl;
 
 
-    int r = 250;
+    int r = 88;
     int g = 20;
     int b = 2;
     int plchld = r;
@@ -884,13 +884,48 @@ int main()
     std::cout << "mid: " << mid << std::endl;
     std::cout << "lo: " << lo << std::endl;
 
-    std::cout << hi_val << ": ";
+    hi_val = value_Corrections[hi_val-1];
+    
     //Add to the black the respective alpha commands.
-    for(auto cmd : operations[hi_val])
+    int cmd = operations[hi_val-1].size()-1;
+    while(cmd >=0)
     {
-        std::cout << cmd;
+        if(operations[hi_val-1][cmd]==4)
+        {
+            cur_lo = value_mappings[cur_lo-1][0];
+            cur_mid = value_mappings[cur_mid-1][0];
+        }
+        else
+        {
+            cur_lo = value_mappings[cur_lo-1][operations[hi_val-1][cmd]];
+            cur_mid = value_mappings[cur_mid-1][operations[hi_val-1][cmd]];
+        }        
+        std::cout << "cur_low: " << cur_lo << std::endl;
+        std::cout << "cur_mid: " << cur_mid << std::endl;
+        cmd--;
     }
-    std::cout << std::endl;
+
+    //map value of mid to correct color
+    //Iterate through that list and add the appropriate alpha commands for that color.
+    //how do i even do that(the mapping part)? I can obvious have... duh just a switch statement and I call the function in each one but pass a color vector to it.
+    //I will use 8 vectors, 7 of them will contain 5 smaller vectors consiting of the commands. (white doesnt need alpha and is only for starting point.)
+       
+    cur_mid = value_Corrections[cur_mid-1];
+    cmd = operations[cur_mid-1].size()-1;
+    while(cmd >=0)
+    {
+        if(operations[cur_mid-1][cmd]==4)
+        {
+            cur_lo = value_mappings[cur_lo-1][0];
+        }
+        else
+        {
+            cur_lo = value_mappings[cur_lo-1][operations[cur_mid-1][cmd]];
+        }        
+        std::cout << "cur_low2: " << cur_lo << std::endl;
+        cmd--;
+    }
+    //std::cout << std::endl;
 
     switch(mid)
     {
