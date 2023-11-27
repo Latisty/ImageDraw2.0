@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/Resources">
+        <file>Images/imgdrawbg2gradadjust.png</file>
+        <file>Images/checkered256.png</file>
+        <file>Images/lens7.png</file>
+        <file>Images/windowframe3.png</file>
+        <file>Images/check.png</file>
+        <file>Images/check2.png</file>
+        <file>Images/checkbox3.png</file>
+        <file>Images/checkbox2.png</file>
+        <file>Images/checkhover.png</file>
+        <file>Images/cb4.png</file>
+        <file>Images/cb5.png</file>
+        <file>Images/pr3.png</file>
+        <file>Images/checkbox6.png</file>
+        <file>Images/checkbox6lit.png</file>
+        <file>Images/artboardwindow.png</file>
+        <file>Images/artboardwindow2.png</file>
+        <file>Images/artboardwindow3.png</file>
+        <file>Images/artboardwindow4.png</file>
+        <file>Images/lens8.png</file>
+        <file>Images/lens9.png</file>
+        <file>Images/optionsframe.png</file>
+    </qresource>
+</RCC>
